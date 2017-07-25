@@ -37,6 +37,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry'
   gem 'pry-byebug'
+  gem 'minitest-reporters', '~> 1.1', '>= 1.1.14'
 end
 
 group :development do
