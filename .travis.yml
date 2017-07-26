@@ -4,5 +4,6 @@ rvm:
 before_script:
   - bundle exec rake db:create --all
   - bundle exec rake db:migrate
+  - yarn add bulma
 services:
   - postgresql
