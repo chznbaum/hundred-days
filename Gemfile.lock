@@ -42,6 +42,8 @@ GEM
     arel (8.0.0)
     bindex (0.5.0)
     builder (3.2.3)
+    bulma-rails (0.4.3)
+      sass (~> 3.2)
     byebug (9.0.6)
     coderay (1.1.1)
     concurrent-ruby (1.0.5)
@@ -173,6 +175,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  bulma-rails (~> 0.4.3)
   byebug
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
