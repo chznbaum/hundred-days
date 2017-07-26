@@ -1,4 +1,17 @@
 {
+  "name": "hundred-days",
+  "version": "1.0.0",
+  "description": "A log for tracking progress on the #100DaysOfCode challenge",
+  "main": "application.js",
+  "scripts": {
+    "start": "yarn add bulma",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "100DaysOfCode",
+    "log"
+  ],
+  "author": "Chazona Baum",
   "dependencies": {
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.25.0",
