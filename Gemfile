@@ -54,4 +54,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Bulma CSS Framework
 gem 'bulma-rails', '~> 0.4.3'
 
+# Webpack
+gem 'webpacker', '~> 2.0'
+
 ruby "2.3.3"
