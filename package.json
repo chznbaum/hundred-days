@@ -4,7 +4,6 @@
   "description": "A log for tracking progress on the #100DaysOfCode challenge",
   "main": "application.js",
   "scripts": {
-    "start": "yarn add bulma",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
