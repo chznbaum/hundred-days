@@ -12,6 +12,13 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :created_at, 'Log date' %>
+    <div class="control">
+      <%= form.date_field :created_at, class: 'input' %>
+    </div>
+  </div>
+
+  <div class="field">
     <%= form.label :round, class: 'label' %>
     <div class="control">
       <%= form.number_field :round, id: :log_round, class: 'input' %>

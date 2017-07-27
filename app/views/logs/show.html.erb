@@ -5,7 +5,7 @@
     <h1 class="subtitle is-2">Round <%= @log.round %> Day <%= @log.day %></h1>
 
     <div>
-      <%= @log.status %>
+      <%= @log.status %> <%= distance_of_time_in_words(@log.created_at, Time.now) %> ago
     </div>
     
     <div>
