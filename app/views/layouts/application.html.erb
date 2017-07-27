@@ -9,39 +9,59 @@
   </head>
 
   <body>
-    <header>
-      <nav class="navbar">
-        <div class="navbar-brand">
-          <%= link_to 'Chazona\'s #100DaysOfCode Log', root_url, class: "navbar-item" %>
-          <div class="navbar-burger burger" data-target="navbarMenu">
-            <span></span>
-            <span></span>
-            <span></span>
+    <section class="hero is-info is-medium is-bold">
+      <div class="hero-head">
+        <nav class="navbar is-transparent">
+          <div class="container">
+              <div class="navbar-brand">
+                <%= link_to 'Chazona\'s #100DaysOfCode Log', root_url, class: "navbar-item" %>
+                <div class="navbar-burger burger" data-target="navbarMenu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+              <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                  <%= link_to 'Home', root_url, class: 'navbar-item' %>
+                  <%= link_to 'Log', '#', class: 'navbar-item' %>
+                  <%= link_to 'About', about_url, class: 'navbar-item' %>
+                  <%= link_to 'Contact', contact_url, class: 'navbar-item' %>
+                  <span class="navbar-item">
+                    <%= link_to 'Log In', new_user_session_url, class: 'button is-info is-inverted' %>
+                  </span>
+                </div>
+              </div>
+          </div>
+        </nav>
+      </div>
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title is-1"><%= yield(:title) %></h1>
+        </div>
+      </div>
+    </section>
+
+    <% if notice %>
+      <section class="section">
+        <div class="container">
+          <div class="notification">
+            <button class="delete"></button>
+            <%= notice %>
           </div>
         </div>
-        <div id="navbarMenu" class="navbar-menu">
-          <div class="navbar-end">
-            <%= link_to 'Home', root_url, class: 'navbar-item' %>
-            <%= link_to 'Log', '#', class: 'navbar-item' %>
-            <%= link_to 'About', about_url, class: 'navbar-item' %>
-            <%= link_to 'Contact', contact_url, class: 'navbar-item' %>
-            <%= link_to 'Log In', '#', class: 'navbar-item' %>
+      </section>
+    <% end %>
+    <% if alert %>
+      <section class="section">
+        <div class="container">
+          <div class="notification is-warning">
+            <button class="delete"></button>
+            <%= alert %>
           </div>
         </div>
-      </nav>
-      <% if notice %>
-        <div class="notification">
-          <button class="delete"></button>
-          <%= notice %>
-        </div>
-      <% end %>
-      <% if alert %>
-        <div class="notification is-warning">
-          <button class="delete"></button>
-        <%= alert %>
-        </div>
-      <% end %>
-    </header>
+      </section>
+    <% end %>
 
     <%= yield %>
 
