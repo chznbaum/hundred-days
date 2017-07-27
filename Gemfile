@@ -51,10 +51,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Babel
-gem 'sprockets', '~> 3.7', '>= 3.7.1'
-gem 'sprockets-es6', '~> 0.9.2'
-
 # Webpack
 gem 'webpacker', '~> 2.0'
 
