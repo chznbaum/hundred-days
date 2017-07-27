@@ -12,31 +12,45 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :round %>
-    <%= form.number_field :round, id: :log_round %>
+    <%= form.label :round, class: 'label' %>
+    <div class="control">
+      <%= form.number_field :round, id: :log_round, class: 'input' %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :day %>
-    <%= form.number_field :day, id: :log_day %>
+    <%= form.label :day, class: 'label' %>
+    <div class="control">
+      <%= form.number_field :day, id: :log_day, class: 'input' %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content, id: :log_content %>
+    <%= form.label :content, class: 'label' %>
+    <div class="control">
+      <%= form.text_area :content, id: :log_content, class: 'input' %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status, id: :log_status %>
+    <div class="control">
+      <% Log.statuses.keys.each do |status| %>
+        <%= form.radio_button :status, status %>
+        <%= form.label "#{status}_#{status.parameterize.underscore}", status.to_sym %>
+      <% end %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :motivation %>
-    <%= form.text_field :motivation, id: :log_motivation %>
+    <%= form.label :motivation, class: 'label' %>
+    <div class="select is-info is-large">
+      <%= form.select(:motivation, Log.motivations.keys.map {|motivation| [motivation, motivation]}, id: :log_motivation) %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="field">
+    <div class="control">
+      <%= form.submit "Submit Log", class: 'button is-info' %>
+    </div>
   </div>
 <% end %>

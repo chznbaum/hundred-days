@@ -1,5 +1,9 @@
-<h1>New Log</h1>
+<% provide(:title, "New Log") %>
+<section class="section">
+  <div class="container">
+    <%= render 'form', log: @log %>
 
-<%= render 'form', log: @log %>
+    <%= link_to 'Back', logs_path, class: 'button is-light' %>
 
-<%= link_to 'Back', logs_path %>
+  </div>
+</section>

@@ -1,27 +1,23 @@
-<p>
-  <strong>Round:</strong>
-  <%= @log.round %>
-</p>
+<% provide(:title, "Round #{@log.round} Day #{@log.day}") %>
+<section class="section">
+  <div class="container">
 
-<p>
-  <strong>Day:</strong>
-  <%= @log.day %>
-</p>
+    <h1 class="subtitle is-2">Round <%= @log.round %> Day <%= @log.day %></h1>
 
-<p>
-  <strong>Content:</strong>
-  <%= @log.content %>
-</p>
+    <div>
+      <%= @log.status %>
+    </div>
+    
+    <div>
+      Motivation: <%= @log.motivation %>
+    </div>
+    
+    <div class="content">
+      <%= @log.content %>
+    </div>
 
-<p>
-  <strong>Status:</strong>
-  <%= @log.status %>
-</p>
+    <%= link_to 'Edit', edit_log_path(@log), class: 'button is-warning' if logged_in?(:site_admin) %>
+    <%= link_to 'Back', logs_path, class: 'button is-light' %>
 
-<p>
-  <strong>Motivation:</strong>
-  <%= @log.motivation %>
-</p>
-
-<%= link_to 'Edit', edit_log_path(@log) if logged_in?(:site_admin) %> |
-<%= link_to 'Back', logs_path %>
+  </div>
+</section>
