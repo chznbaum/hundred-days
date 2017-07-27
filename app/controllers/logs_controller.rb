@@ -4,7 +4,11 @@ class LogsController < ApplicationController
 
   # GET /logs
   def index
-    @logs = Log.all
+    if logged_in?(:site_admin)
+      @logs = Log.by_recent
+    else
+      @logs = Log.where(status: 'Published').by_recent
+    end
   end
 
   # GET /logs/1

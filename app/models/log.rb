@@ -12,4 +12,8 @@ class Log < ApplicationRecord
     "😉" => 8,
     "😆" => 9
   }
+
+  def self.by_recent
+    order("created_at DESC")
+  end
 end
