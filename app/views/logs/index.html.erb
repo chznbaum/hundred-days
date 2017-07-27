@@ -1,7 +1,15 @@
 <% provide(:title, "Log") %>
+
 <section class="section">
   <div class="container">
-    <% @logs.each do |log| %>
+    <h2 class="subtitle is-2">Challenge Progress</h2>
+    <progress class="progress is-success" value="<%= @progress %>" max="100"><%= @progress %>%</progress>
+  </div>
+</section>
+
+<% @logs.each do |log| %>
+  <section class="section">
+    <div class="container">
       <h2 class="subtitle is-2">Round <%= log.round %> Day <%= log.day %></h2>
       <div>
         <%= log.status %> <%= distance_of_time_in_words(log.created_at, Time.now) %> ago
@@ -17,8 +25,12 @@
         <%= link_to 'Edit', edit_log_path(log), class: 'button is-warning' if logged_in?(:site_admin) %>
         <%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-danger' if logged_in?(:site_admin) %>
       </div>
-    <% end %>
+    </div>
+  </section>
+<% end %>
 
+<section class="section">
+  <div class="container">
     <%= link_to 'New Log', new_log_path, class: 'button is-info' if logged_in?(:site_admin) %>
   </div>
 </section>

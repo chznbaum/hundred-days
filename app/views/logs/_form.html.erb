@@ -12,9 +12,9 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :created_at, 'Log date' %>
+    <%= form.label :created_at, 'Log date', class: 'label' %>
     <div class="control">
-      <%= form.date_field :created_at, class: 'input' %>
+      <%= form.date_field :created_at, value: (log.created_at || Time.now), class: 'input' %>
     </div>
   </div>
 
@@ -34,9 +34,7 @@
 
   <div class="field">
     <%= form.label :content, class: 'label' %>
-    <div class="control">
-      <%= form.text_area :content, id: :log_content, class: 'input' %>
-    </div>
+    <%= form.text_area :content, id: :log_content, class: 'textarea' %>
   </div>
 
   <div class="field">

@@ -4,6 +4,7 @@ class LogsController < ApplicationController
 
   # GET /logs
   def index
+    @progress = Log.last.day || 0
     if logged_in?(:site_admin)
       @logs = Log.by_recent
     else
