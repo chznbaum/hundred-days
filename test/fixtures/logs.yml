@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  round: 1
+  day: 1
+  content: MyText
+  status: 
+  motivation: 
+
+two:
+  round: 1
+  day: 1
+  content: MyText
+  status: 
+  motivation: 
