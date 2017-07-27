@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Round:</strong>
   <%= @log.round %>
@@ -25,5 +23,5 @@
   <%= @log.motivation %>
 </p>
 
-<%= link_to 'Edit', edit_log_path(@log) %> |
+<%= link_to 'Edit', edit_log_path(@log) if logged_in?(:site_admin) %> |
 <%= link_to 'Back', logs_path %>
