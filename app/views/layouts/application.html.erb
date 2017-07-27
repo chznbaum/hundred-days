@@ -28,7 +28,11 @@
                   <%= link_to 'About', about_url, class: 'navbar-item' %>
                   <%= link_to 'Contact', contact_url, class: 'navbar-item' %>
                   <span class="navbar-item">
-                    <%= link_to 'Log In', new_user_session_url, class: 'button is-info is-inverted' %>
+                    <% if current_user %>
+                      <%= link_to 'Log Out', destroy_user_session_url, method: :delete, class: 'button is-info is-inverted' %>
+                    <% else %>
+                      <%= link_to 'Log In', new_user_session_url, class: 'button is-info is-inverted' %>
+                    <% end %>
                   </span>
                 </div>
               </div>
