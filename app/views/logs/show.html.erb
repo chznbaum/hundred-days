@@ -13,7 +13,7 @@
     </div>
     
     <div class="content">
-      <%= @log.content %>
+      <%= markdown @log.content %>
     </div>
 
     <%= link_to 'Edit', edit_log_path(@log), class: 'button is-warning' if logged_in?(:site_admin) %>

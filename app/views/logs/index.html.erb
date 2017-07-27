@@ -10,7 +10,7 @@
         Motivation: <%= log.motivation %>
       </div>
       <div class="content">
-        <%= log.content %>
+        <%= markdown log.content %>
       </div>
       <div>
         <%= link_to 'Show', log, class: 'button is-light' %>
