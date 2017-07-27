@@ -29,6 +29,18 @@
           </div>
         </div>
       </nav>
+      <% if notice %>
+        <div class="notification">
+          <button class="delete"></button>
+          <%= notice %>
+        </div>
+      <% end %>
+      <% if alert %>
+        <div class="notification is-warning">
+          <button class="delete"></button>
+        <%= alert %>
+        </div>
+      <% end %>
     </header>
 
     <%= yield %>
