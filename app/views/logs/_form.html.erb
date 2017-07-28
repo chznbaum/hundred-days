@@ -1,13 +1,14 @@
 <%= form_with(model: log, local: true) do |form| %>
   <% if log.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(log.errors.count, "error") %> prohibited this log from being saved:</h2>
-
-      <ul>
+      
       <% log.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+
+        <div class="notification is-danger">
+          <%= message %>
+        </div>
       <% end %>
-      </ul>
+
     </div>
   <% end %>
 
