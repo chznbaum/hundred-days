@@ -34,6 +34,20 @@
   </div>
 
   <div class="field">
+    <%= form.label :completed_minutes, class: 'label' %>
+    <div class="control">
+      <%= form.number_field :completed_minutes, id: :log_completed_minutes, class: 'input' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :commits, class: 'label' %>
+    <div class="control">
+      <%= form.number_field :commits, id: :log_commits, class: 'input' %>
+    </div>
+  </div>
+
+  <div class="field">
     <%= form.label :content, class: 'label' %>
     <%= form.text_area :content, id: :log_content, class: 'textarea' %>
   </div>

@@ -7,6 +7,18 @@
     <div>
       <%= @log.status %> <%= distance_of_time_in_words(@log.created_at, Time.now) %> ago
     </div>
+
+    <% if @log.completed_minutes %>
+      <div>
+        Time: <%= humanize @log.completed_minutes %>
+      </div>
+    <% end %>
+
+    <% if @log.commits %>
+      <div>
+        Commits: <%= @log.commits %>
+      </div>
+    <% end %>
     
     <div>
       Motivation: <%= @log.motivation %>

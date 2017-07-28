@@ -19,4 +19,13 @@ module LogsHelper
     
     markdown_to_html.render(text).html_safe
   end
+
+  def humanize mins
+    [[60, :minute], [24, :hour], [1000, :day]].map{ |count, name|
+      if mins > 0
+        mins, n = mins.divmod(count)
+        pluralize(n.to_i, "#{name}")
+      end
+    }.compact.reverse.join(' ')
+  end
 end
