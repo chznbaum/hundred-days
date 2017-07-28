@@ -8,6 +8,7 @@ class LogsController < ApplicationController
       @progress = 0
     else
       @progress = Log.last.day
+    end
     if logged_in?(:site_admin)
       @logs = Log.by_recent
     else
