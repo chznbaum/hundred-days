@@ -13,6 +13,8 @@ class Log < ApplicationRecord
     "😆" => 9
   }
 
+  validates_presence_of :round, :day, :content, :status, :motivation, :created_at
+
   def self.by_recent
     order("created_at DESC")
   end
