@@ -3,13 +3,13 @@
 one:
   round: 1
   day: 1
-  content: MyText
-  status: 
-  motivation: 
+  content: "This is a log."
+  status: 1
+  motivation: 7
 
 two:
   round: 1
-  day: 1
-  content: MyText
-  status: 
-  motivation: 
+  day: 2
+  content: "This is another log."
+  status: 1
+  motivation: 3
