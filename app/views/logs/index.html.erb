@@ -21,7 +21,7 @@
         <%= markdown log.content %>
       </div>
       <div>
-        <%= link_to 'Show', log, class: 'button is-light' %>
+        <%= link_to 'Show', log, class: 'button is-info' %>
         <%= link_to 'Edit', edit_log_path(log), class: 'button is-warning' if logged_in?(:site_admin) %>
         <%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-danger' if logged_in?(:site_admin) %>
       </div>
