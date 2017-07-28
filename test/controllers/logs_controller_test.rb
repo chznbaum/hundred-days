@@ -20,7 +20,7 @@ class LogsControllerTest < ActionDispatch::IntegrationTest
   test "should create log" do
     sign_in users(:admin)
     assert_difference('Log.count') do
-      post logs_url, params: { log: { content: @log.content, day: @log.day, motivation: @log.motivation, round: @log.round, status: @log.status } }
+      post logs_url, params: { log: { content: @log.content, day: @log.day, motivation: @log.motivation, round: @log.round, status: @log.status, created_at: Time.now } }
     end
     assert_redirected_to log_url(Log.last)
   end
