@@ -58,4 +58,8 @@ gem 'webpacker', '~> 2.0'
 gem 'devise', '~> 4.3'
 gem 'petergate', '~> 1.7', '>= 1.7.5'
 
+# Markdown and syntax highlighting
+gem 'redcarpet', '~> 3.4'
+gem 'coderay', '~> 1.1', '>= 1.1.1'
+
 ruby "2.3.3"
