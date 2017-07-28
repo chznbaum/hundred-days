@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  round: 1
+  day: 1
+  content: "This is a log."
+  status: 1
+  motivation: 7
+
+two:
+  round: 1
+  day: 2
+  content: "This is another log."
+  status: 1
+  motivation: 3

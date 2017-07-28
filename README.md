@@ -7,13 +7,63 @@ The source code for what will be a log for tracking progress on the #100DaysOfCo
 
 ## Installation
 
+Clone the repository:
+
+```bash
+git clone https://github.com/chznbaum/hundred-days.git
+```
+
+Install the dependencies:
+
+```bash
+bundle install
+```
+
+Create your database:
+
+```bash
+rails db:create
+```
+
+Migrate the database tables:
+
+```bash
+rails db:migrate
+```
+
+Start your server:
+
+```bash
+rails s
+```
+
+### Notes
+
+- You will need Ruby v2.3.3, Rails v5.1, and PostgreSQL set up on your system before taking these steps.
+
 ## Features
 
+- User authentication with Devise
+- Roles and authorization with Petergate
+- Markdown parsing with syntax highlighting with Redcarpet and Coderay
+- Draft/Published log posts
+- Challenge completion progress bar
+
 ## To-Do
+
+- Threaded comments with polymorphic associations
+- Live-updating comments with ActionCable
+- Contact form for emails
+- Twitter cards
+- Reactive functionality with Vue
 
 ## Credits
 
 The #100DaysOfCode challenge was created by @Kallway, and his [log template](https://github.com/Kallaway/100-days-of-code) was an inspiration for me to create my own application.
+
+Motivation tracking inspired by and adapted from [@SchnucklePi](https://twitter.com/SchnucklePi).
+
+Progress bar tracking inspired by and adapted from [@ChrisVomRhein](https://twitter.com/ChrisVomRhein).
 
 ## License
 

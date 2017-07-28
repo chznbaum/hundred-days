@@ -24,7 +24,7 @@
               <div id="navbarMenu" class="navbar-menu">
                 <div class="navbar-end">
                   <%= link_to 'Home', root_url, class: 'navbar-item' %>
-                  <%= link_to 'Log', '#', class: 'navbar-item' %>
+                  <%= link_to 'Log', logs_path, class: 'navbar-item' %>
                   <%= link_to 'About', about_url, class: 'navbar-item' %>
                   <%= link_to 'Contact', contact_url, class: 'navbar-item' %>
                   <span class="navbar-item">
@@ -50,7 +50,6 @@
       <section class="section">
         <div class="container">
           <div class="notification">
-            <button class="delete"></button>
             <%= notice %>
           </div>
         </div>
@@ -60,7 +59,6 @@
       <section class="section">
         <div class="container">
           <div class="notification is-warning">
-            <button class="delete"></button>
             <%= alert %>
           </div>
         </div>

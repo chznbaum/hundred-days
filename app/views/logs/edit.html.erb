@@ -1,0 +1,11 @@
+<% provide(:title, "Editing Log from Round #{@log.round} Day #{@log.day}") %>
+<section class="section">
+  <div class="container">
+
+    <%= render 'form', log: @log %>
+
+    <%= link_to 'Show', @log, class: 'button is-light' %>
+    <%= link_to 'Back', logs_path, class: 'button is-light' %>
+
+  </div>
+</section>

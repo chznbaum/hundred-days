@@ -1,0 +1,47 @@
+<% provide(:title, "Log") %>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-2">Challenge Progress</h2>
+    <progress class="progress is-success" value="<%= @progress %>" max="100"><%= @progress %>%</progress>
+    <p>Total Time: <%= humanize @logs.sum("completed_minutes") %></p>
+  </div>
+</section>
+
+<% @logs.each do |log| %>
+  <section class="section">
+    <div class="container">
+      <h2 class="subtitle is-2">Round <%= log.round %> Day <%= log.day %></h2>
+      <div>
+        <%= log.status %> <%= distance_of_time_in_words(log.created_at, Time.now) %> ago
+      </div>
+      <% if log.completed_minutes %>
+        <div>
+          Time: <%= humanize log.completed_minutes %>
+        </div>
+      <% end %>
+      <% if log.commits %>
+        <div>
+          Commits: <%= log.commits %>
+        </div>
+      <% end %>
+      <div>
+        Motivation: <%= log.motivation %>
+      </div>
+      <div class="content">
+        <%= markdown log.content %>
+      </div>
+      <div>
+        <%= link_to 'Show', log, class: 'button is-info' %>
+        <%= link_to 'Edit', edit_log_path(log), class: 'button is-warning' if logged_in?(:site_admin) %>
+        <%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-danger' if logged_in?(:site_admin) %>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+<section class="section">
+  <div class="container">
+    <%= link_to 'New Log', new_log_path, class: 'button is-info' if logged_in?(:site_admin) %>
+  </div>
+</section>
