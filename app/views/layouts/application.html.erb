@@ -9,14 +9,13 @@
   </head>
 
   <body>
-    <nav class="navbar">
+    <nav class="navbar is-size-5">
       <div class="container">
         <div class="navbar-brand">
           <%= link_to root_url, class: 'navbar-item' do %>
             <%= svg 'logo' %>
           <% end %>
           <%= link_to 'Log', logs_path, class: 'navbar-item is-hidden-desktop' %>
-          <%= link_to 'About', about_url, class: 'navbar-item is-hidden-desktop is-hidden-mobile' %>
         </div>
         <div id="navbarMenu" class="navbar-menu">
           <div class="navbar-start">
@@ -76,6 +75,7 @@
           </div>
           <div class="column is-4">
             <div class="content">
+              <p><%= link_to 'View Logs', logs_url %></p>
               <p><%= link_to 'Contact Chazona', contact_url %></p>
             </div>
           </div>
