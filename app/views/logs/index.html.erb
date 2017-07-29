@@ -11,7 +11,8 @@
 <% @logs.each do |log| %>
   <section class="section">
     <div class="container content is-medium">
-      <h2>Round <%= log.round %> Day <%= log.day %></h2>
+      <hr>
+      <h2><%= link_to "Round #{log.round} Day #{log.day}", log %></h2>
       <p>
         <strong><%= log.status %></strong> <%= distance_of_time_in_words(log.created_at, Time.now) %> ago
         <br>
