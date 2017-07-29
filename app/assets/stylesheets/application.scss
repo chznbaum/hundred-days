@@ -23,3 +23,9 @@ a {
   background: none;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
 }
+
+.navbar-brand {
+  svg {
+    max-height: 40px;
+  }
+}

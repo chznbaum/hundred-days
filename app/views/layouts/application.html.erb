@@ -9,36 +9,34 @@
   </head>
 
   <body>
-    <section class="hero is-info is-medium is-bold">
-      <div class="hero-head">
-        <nav class="navbar is-transparent">
-          <div class="container">
-              <div class="navbar-brand">
-                <%= link_to 'Chazona\'s #100DaysOfCode Log', root_url, class: "navbar-item" %>
-                <div class="navbar-burger burger" data-target="navbarMenu">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-              <div id="navbarMenu" class="navbar-menu">
-                <div class="navbar-end">
-                  <%= link_to 'Home', root_url, class: 'navbar-item' %>
-                  <%= link_to 'Log', logs_path, class: 'navbar-item' %>
-                  <%= link_to 'About', about_url, class: 'navbar-item' %>
-                  <%= link_to 'Contact', contact_url, class: 'navbar-item' %>
-                  <span class="navbar-item">
-                    <% if current_user %>
-                      <%= link_to 'Log Out', destroy_user_session_url, method: :delete, class: 'button is-info is-inverted' %>
-                    <% else %>
-                      <%= link_to 'Log In', new_user_session_url, class: 'button is-info is-inverted' %>
-                    <% end %>
-                  </span>
-                </div>
-              </div>
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <%= link_to root_url, class: 'navbar-item' do %>
+            <%= svg 'logo' %>
+          <% end %>
+          <%= link_to 'Log', logs_path, class: 'navbar-item is-hidden-desktop' %>
+          <%= link_to 'About', about_url, class: 'navbar-item is-hidden-desktop is-hidden-mobile' %>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-start">
+            <%= link_to 'Log', logs_path, class: 'navbar-item' %>
+            <%= link_to 'About', about_url, class: 'navbar-item' %>
+            <%= link_to 'Contact', contact_url, class: 'navbar-item' %>
           </div>
-        </nav>
+          <div class="navbar-end">
+            <span class="navbar-item">
+              <% if current_user %>
+                <%= link_to 'Log Out', destroy_user_session_url, method: :delete, class: 'button is-info inverse' %>
+              <% else %>
+                <%= link_to 'Log In', new_user_session_url, class: 'button is-info inverse' %>
+              <% end %>
+            </span>
+          </div>
+        </div>
       </div>
+    </nav>
+    <section class="hero is-info is-medium is-bold">
       <div class="hero-body">
         <div class="container">
           <h1 class="title is-1"><%= yield(:title) %></h1>
@@ -69,11 +67,23 @@
 
     <footer class="footer">
       <div class="container">
-        <div class="content has-text-centered">
-          <p>
-            © 2017 Chazona Baum | All rights reserved
-          </p>
+        <div class="columns">
+          <div class="column is-8">
+            <div class="content">
+              <p>#100DaysOfCode Log by <a href="https://chazonabaum.com">Chazona Baum</a> for challenge created by <a href="http://kallaway.io/">Alexander Kallaway</a>.</p>
+              <p><%= link_to 'About Chazona and the #100DaysOfCode Challenge', about_url %></p>
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="content">
+              <p><%= link_to 'Contact Chazona', contact_url %></p>
+            </div>
+          </div>
         </div>
+        <small>
+          <p>© 2017 <a href="https://chazonabaum.com">Chazona Baum</a>. All rights reserved.</p>
+          <p>Source code available on <a href="https://github.com/chznbaum/hundred-days">GitHub</a>.</p>
+        </small>
       </div>
     </footer>
   </body>
