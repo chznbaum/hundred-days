@@ -6,12 +6,15 @@
   </figure>
   <div class="media-content">
     <div class="content">
+      <% if comment.commentable.is_a?(Comment) %>
+        <small>Replying to <%= comment.commentable.user.name %></small><br/>
+      <% end %>
       <%= comment.content %>
       <br/> 
       <button data-commentid="<%= comment.id %>" class="reply button is-info is-outlined">
         Reply
       </button> · 
-      <%= time_ago_in_words(comment.created_at) %> ago by <strong><%= comment.user.email %></strong>
+      <%= time_ago_in_words(comment.created_at) %> ago by <strong><%= comment.user.name %></strong>
     </div>
     <% if current_user %>
       <div class="expandme hidden" data-commentid="<%= comment.id %>">
