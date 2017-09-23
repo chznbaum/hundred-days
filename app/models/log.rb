@@ -14,6 +14,7 @@ class Log < ApplicationRecord
   }
 
   validates_presence_of :round, :day, :content, :status, :motivation, :created_at
+  has_many :comments, as: :commentable
 
   def self.by_recent
     order("created_at DESC")
