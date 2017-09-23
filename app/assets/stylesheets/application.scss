@@ -29,3 +29,19 @@ a {
     max-height: 40px;
   }
 }
+
+#comment-group .media {
+  padding-top: 1rem;
+}
+
+.reply-button {
+  margin-bottom: 1rem;
+}
+
+.media + .media {
+  margin-top: 0;
+}
+
+.hidden {
+  display: none;
+}

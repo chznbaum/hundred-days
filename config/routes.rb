@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :logs
+  resources :logs do
+    resources :comments
+  end
+  resources :comments do
+    resources :comments
+  end
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   get 'about', to: 'pages#about'
 

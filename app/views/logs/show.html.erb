@@ -19,7 +19,27 @@
       <br>
       <strong>Log:</strong>
     </p>
+    <article>
       <%= markdown @log.content %>
+    </article>
+
+    <h2>Comments</h2>
+    <% if current_user %>
+      <%= form_for [@log, Comment.new] do |f| %>
+        <div class="field">
+          <%= f.label :content, 'Add a comment', class: 'label' %>
+          <div class="control">
+            <%= f.text_area :content, class: 'textarea' %>
+          </div>
+        </div>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.submit "Add comment", class: 'button is-info' %>
+      <% end %>
+    <% end %>
+
+    <div class="margin-top" id="comment-group">
+      <%= render(partial: 'comments/comment', collection: @log.comments) %>
+    </div>
 
     <p>
       <%= link_to 'Edit', edit_log_path(@log), class: 'button is-warning' if logged_in?(:site_admin) %>
