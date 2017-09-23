@@ -48,10 +48,10 @@ rails s
 - Markdown parsing with syntax highlighting with Redcarpet and Coderay
 - Draft/Published log posts
 - Challenge completion progress bar
+- Threaded comments with polymorphic associations and collapsible reply forms
 
 ## To-Do
 
-- Threaded comments with polymorphic associations
 - Live-updating comments with ActionCable
 - Contact form for emails
 - Twitter cards
