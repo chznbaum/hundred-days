@@ -10,11 +10,18 @@
         <small>Replying to <%= comment.commentable.user.name %></small><br/>
       <% end %>
       <%= markdown comment.content %>
-      <br/> 
-      <button data-commentid="<%= comment.id %>" class="reply button is-info is-outlined">
+      <br/>
+      <small>
+        <%= pluralize(comment.comments.count, 'reply') %>
+      </small> ·  
+      <% if current_user %>
+        <button data-commentid="<%= comment.id %>" class="reply button is-info is-outlined">
         Reply
-      </button> · 
-      <%= time_ago_in_words(comment.created_at) %> ago by <%= comment.user.name %>
+        </button> ·  
+      <% end %>
+      <small>
+        <%= time_ago_in_words(comment.created_at) %> ago by <%= comment.user.name %>
+      </small>
     </div>
     <% if current_user %>
       <div class="expandme hidden" data-commentid="<%= comment.id %>">
@@ -30,6 +37,6 @@
         <% end %>
       </div>
     <% end %>
-    <%= render partial: 'comments/comment', collection: comment.comments %>
+    <%= render partial: 'comments/comment', collection: comment.comments.by_recent %>
   </div>
 </article>

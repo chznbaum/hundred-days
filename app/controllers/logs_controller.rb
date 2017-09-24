@@ -18,6 +18,8 @@ class LogsController < ApplicationController
 
   # GET /logs/1
   def show
+    @comment_count = @log.comments.count
+    @comments = @log.comments.by_recent
   end
 
   # GET /logs/new

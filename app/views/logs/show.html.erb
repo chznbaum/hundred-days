@@ -23,7 +23,13 @@
       <%= markdown @log.content %>
     </article>
 
-    <h2>Comments</h2>
+    <h2>
+      <% if @log.comments.count == 0 %>
+        Join the Conversation
+      <% else %>
+        <%= pluralize(@comment_count, 'Comment') %>
+      <% end %>
+    </h2>
     <% if current_user %>
       <%= form_for [@log, Comment.new] do |f| %>
         <div class="field">
@@ -35,10 +41,14 @@
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.submit "Add comment", class: 'button is-info' %>
       <% end %>
+    <% else %>
+      <div class="notification">
+        Only logged in users can leave a comment. Would you like to <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %>?
+      </div>
     <% end %>
 
     <div class="margin-top" id="comment-group">
-      <%= render(partial: 'comments/comment', collection: @log.comments) %>
+      <%= render(partial: 'comments/comment', collection: @comments) %>
     </div>
 
     <p class="button-group">
