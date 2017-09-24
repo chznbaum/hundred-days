@@ -1,0 +1,35 @@
+<article class="media">
+  <figure class="media-left">
+    <p class="image is-64x64 comment-avatar">
+      <%= gravatar_helper comment.user %>
+    </p>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <% if comment.commentable.is_a?(Comment) %>
+        <small>Replying to <%= comment.commentable.user.name %></small><br/>
+      <% end %>
+      <%= markdown comment.content %>
+      <br/> 
+      <button data-commentid="<%= comment.id %>" class="reply button is-info is-outlined">
+        Reply
+      </button> · 
+      <%= time_ago_in_words(comment.created_at) %> ago by <%= comment.user.name %>
+    </div>
+    <% if current_user %>
+      <div class="expandme hidden" data-commentid="<%= comment.id %>">
+        <%= form_for [comment, Comment.new] do |f| %>
+          <div class="field">
+            <%= f.label :content, 'Add a reply', class: 'label' %>
+            <div class="control">
+              <%= f.text_area :content, class: 'textarea' %>
+            </div>
+          </div>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.submit "Reply", class: 'button is-info reply-button' %>
+        <% end %>
+      </div>
+    <% end %>
+    <%= render partial: 'comments/comment', collection: comment.comments %>
+  </div>
+</article>
