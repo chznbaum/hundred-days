@@ -41,7 +41,7 @@
       <%= render(partial: 'comments/comment', collection: @log.comments) %>
     </div>
 
-    <p>
+    <p class="button-group">
       <%= link_to 'Edit', edit_log_path(@log), class: 'button is-warning' if logged_in?(:site_admin) %>
       <%= link_to 'Back', logs_path, class: 'button is-info' %>
     </p>
