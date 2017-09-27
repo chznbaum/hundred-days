@@ -8,6 +8,11 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@chznbaum">
+    <meta name="twitter:creator" content="@chznbaum">
+    <meta property="og:url" content="<%= request.url %>">
+    <meta property="og:description" content="<%= yield(:title) %>: Chazona's #100DaysOfCode Log">
   </head>
 
   <body>
