@@ -28,16 +28,16 @@
           <div class="navbar-end">
             <span class="navbar-item">
               <% if current_user %>
-                <%= link_to 'Log Out', destroy_user_session_url, method: :delete, class: 'button is-info inverse' %>
+                <%= link_to 'Log Out', destroy_user_session_url, method: :delete, class: 'button is-primary inverse' %>
               <% else %>
-                <%= link_to 'Log In', new_user_session_url, class: 'button is-info inverse' %>
+                <%= link_to 'Log In', new_user_session_url, class: 'button is-primary inverse' %>
               <% end %>
             </span>
           </div>
         </div>
       </div>
     </nav>
-    <section class="hero is-info is-medium is-bold">
+    <section class="hero is-primary is-medium is-bold">
       <div class="hero-body">
         <div class="container">
           <h1 class="title is-1"><%= yield(:title) %></h1>

@@ -15,7 +15,7 @@
         <%= pluralize(comment.comments.count, 'reply') %>
       </small> ·  
       <% if current_user %>
-        <button data-commentid="<%= comment.id %>" class="reply button is-info is-outlined">
+        <button data-commentid="<%= comment.id %>" class="reply button is-primary is-outlined">
         Reply
         </button> ·  
       <% end %>
@@ -33,7 +33,7 @@
             </div>
           </div>
           <%= f.hidden_field :user_id, value: current_user.id %>
-          <%= f.submit "Reply", class: 'button is-info reply-button' %>
+          <%= f.submit "Reply", class: 'button is-primary reply-button' %>
         <% end %>
       </div>
     <% end %>

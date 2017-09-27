@@ -3,12 +3,13 @@
 <section class="section">
   <div class="container content is-large">
     <h2>Challenge Progress</h2>
-    <progress class="progress is-success" value="<%= @progress %>" max="100"><%= @progress %>%</progress>
+    <progress class="progress is-primary" value="<%= @progress %>" max="100"><%= @progress %>%</progress>
     <p>Total Time: <%= humanize @all_logs.sum("completed_minutes") %></p>
   </div>
+  <div class="container">
+    <%= paginate @logs %>
+  </div>
 </section>
-
-<%= paginate @logs %>
 
 <% @logs.each do |log| %>
   <section class="section">
@@ -32,7 +33,7 @@
       </p>
       <%= markdown log.content %>
       <p>
-        <%= link_to 'Show', log, class: 'button is-info' %>
+        <%= link_to 'Show', log, class: 'button is-primary' %>
         <%= link_to 'Edit', edit_log_path(log), class: 'button is-warning' if logged_in?(:site_admin) %>
         <%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-danger' if logged_in?(:site_admin) %>
       </p>
@@ -40,10 +41,9 @@
   </section>
 <% end %>
 
-<%= paginate @logs %>
-
 <section class="section">
   <div class="container">
-    <%= link_to 'New Log', new_log_path, class: 'button is-info' if logged_in?(:site_admin) %>
+    <%= paginate @logs %>
+    <%= link_to 'New Log', new_log_path, class: 'button is-primary button-group' if logged_in?(:site_admin) %>
   </div>
 </section>
