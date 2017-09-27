@@ -62,4 +62,7 @@ gem 'petergate', '~> 1.7', '>= 1.7.5'
 gem 'redcarpet', '~> 3.4'
 gem 'coderay', '~> 1.1', '>= 1.1.1'
 
+# Pagination
+gem 'kaminari', '~> 1.0', '>= 1.0.1'
+
 ruby "2.3.3"
