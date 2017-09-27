@@ -49,12 +49,13 @@ rails s
 - Draft/Published log posts
 - Challenge completion progress bar
 - Threaded comments with polymorphic associations and collapsible reply forms
+- Twitter cards
 
 ## To-Do
 
 - Live-updating comments with ActionCable
 - Contact form for emails
-- Twitter cards
+- Featured images/image cards
 - Reactive functionality with Vue
 
 ## Credits
