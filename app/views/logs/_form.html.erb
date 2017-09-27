@@ -63,14 +63,14 @@
 
   <div class="field">
     <%= form.label :motivation, class: 'label' %>
-    <div class="select is-info is-large">
+    <div class="select is-primary is-large">
       <%= form.select(:motivation, Log.motivations.keys.map {|motivation| [motivation, motivation]}, id: :log_motivation) %>
     </div>
   </div>
 
   <div class="field">
     <div class="control">
-      <%= form.submit "Submit Log", class: 'button is-info' %>
+      <%= form.submit "Submit Log", class: 'button is-primary' %>
     </div>
   </div>
 <% end %>
