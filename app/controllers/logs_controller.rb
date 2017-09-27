@@ -4,15 +4,16 @@ class LogsController < ApplicationController
 
   # GET /logs
   def index
+    @all_logs = Log.all
     if Log.count == 0
       @progress = 0
     else
       @progress = Log.last.day
     end
     if logged_in?(:site_admin)
-      @logs = Log.by_recent
+      @logs = Log.by_recent.page params["page"]
     else
-      @logs = Log.where(status: 'Published').by_recent
+      @logs = Log.where(status: 'Published').by_recent.page params["page"]
     end
   end
 

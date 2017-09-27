@@ -4,9 +4,11 @@
   <div class="container content is-large">
     <h2>Challenge Progress</h2>
     <progress class="progress is-success" value="<%= @progress %>" max="100"><%= @progress %>%</progress>
-    <p>Total Time: <%= humanize @logs.sum("completed_minutes") %></p>
+    <p>Total Time: <%= humanize @all_logs.sum("completed_minutes") %></p>
   </div>
 </section>
+
+<%= paginate @logs %>
 
 <% @logs.each do |log| %>
   <section class="section">
@@ -37,6 +39,8 @@
     </div>
   </section>
 <% end %>
+
+<%= paginate @logs %>
 
 <section class="section">
   <div class="container">
